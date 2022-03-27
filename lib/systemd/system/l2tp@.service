@@ -1,0 +1,14 @@
+[Unit]
+Description=L2TP for %I
+After=network.target network-online.target wg-quick.target
+Requires=wg-quick.target network.target wg-quick.target
+PartOf=l2tp.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/etc/l2tp/l2tp.sh up %i
+ExecStop=/etc/l2tp/l2tp.sh down %i
+
+[Install]
+WantedBy=multi-user.target
