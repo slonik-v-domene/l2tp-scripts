@@ -34,7 +34,9 @@ Usage:
 - systemctl enable l2tp@br0.service
 - systemctl start l2tp@br0.service
 - systemctl stop l2tp@br0.service
+
 or
+
 - /etc/l2tp/l2tp.sh up br0
 - /etc/l2tp/l2tp.sh down br0
 
